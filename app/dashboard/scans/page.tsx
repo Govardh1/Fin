@@ -127,7 +127,7 @@ export default function ScanDetailPage() {
                     <div className="space-y-2">
                       {mockActivityLog.slice(0, 12).map((log, idx) => (
                         <div key={idx} className="flex">
-                          <span className="text-muted-foreground mr-2 flex-shrink-0">{log.timestamp}</span>
+                          <span className="text-muted-foreground mr-2 shrink-0">{log.timestamp}</span>
                           <span>{log.message}</span>
                           {log.code && <span className="text-cyan-400 ml-1">{log.code}</span>}
                         </div>
@@ -161,19 +161,19 @@ export default function ScanDetailPage() {
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
                             <span
-                              className="px-2 py-0.5 rounded text-xs font-bold text-white flex-shrink-0"
+                              className="px-2 py-0.5 rounded text-xs font-bold text-white shrink-0"
                               style={{ backgroundColor: getSeverityColor(finding.severity) }}
                             >
                               {finding.severity.toUpperCase()}
                             </span>
-                            <span className="text-xs text-muted-foreground flex-shrink-0">{finding.timestamp}</span>
+                            <span className="text-xs text-muted-foreground shrink-0">{finding.timestamp}</span>
                           </div>
                           <h3 className="font-semibold text-foreground text-sm line-clamp-2">{finding.title}</h3>
                         </div>
                         {expandedFinding === finding.id ? (
-                          <ChevronUp size={16} className="text-muted-foreground flex-shrink-0 ml-2" />
+                          <ChevronUp size={16} className="text-muted-foreground shrink-0 ml-2" />
                         ) : (
-                          <ChevronDown size={16} className="text-muted-foreground flex-shrink-0 ml-2" />
+                          <ChevronDown size={16} className="text-muted-foreground shrink-0 ml-2" />
                         )}
                       </button>
 
