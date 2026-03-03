@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Sidebar } from '@/components/sidebar';
 import { Search, Plus, Filter, Layout } from 'lucide-react';
 import { mockScans } from '@/lib/mockData';
 
 export default function DashboardPage() {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('name');
 
@@ -15,12 +17,15 @@ export default function DashboardPage() {
       scan.type.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const handleNewScan = () => {
+    router.push('/dashboard/scans');
+  };
+
   return (
     <div className="flex h-screen bg-background">
       <Sidebar />
 
       <main className="flex-1 flex flex-col overflow-auto">
-       
         <header className="bg-card border-b border-border sticky top-0 z-10">
           <div className="px-6 py-4 flex items-center justify-between">
             <div>
@@ -38,10 +43,8 @@ export default function DashboardPage() {
           </div>
         </header>
 
-       
         <div className="flex-1 overflow-auto">
           <div className="p-6 space-y-6">
-           
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="bg-card border border-border rounded-lg p-4">
                 <div className="flex items-start justify-between mb-2">
@@ -96,7 +99,6 @@ export default function DashboardPage() {
               </div>
             </div>
 
-         
             <div className="bg-card border border-border rounded-lg p-6">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-sm">
                 <div>
@@ -132,7 +134,6 @@ export default function DashboardPage() {
               </div>
             </div>
 
-         
             <div className="bg-card border border-border rounded-lg overflow-hidden">
               <div className="p-4 border-b border-border flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
                 <div className="relative flex-1">
@@ -154,7 +155,10 @@ export default function DashboardPage() {
                     <Layout size={16} />
                     Column
                   </button>
-                  <button className="px-3 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors flex items-center gap-2 text-sm font-semibold">
+                  <button 
+                    onClick={handleNewScan}
+                    className="px-3 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors flex items-center gap-2 text-sm font-semibold"
+                  >
                     <Plus size={16} />
                     New scan
                   </button>
