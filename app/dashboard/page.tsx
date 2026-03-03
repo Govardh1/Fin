@@ -11,6 +11,8 @@ export default function DashboardPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('name');
 
+
+  
   const filteredScans = mockScans.filter(
     (scan) =>
       scan.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
