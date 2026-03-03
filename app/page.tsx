@@ -39,7 +39,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-teal-900 to-orange-600 flex items-center justify-center p-4">
       <div className="hidden lg:flex lg:w-1/2 flex-col justify-between text-white px-12 py-12 h-screen">
-        <div className="text-2xl font-bold">Fenrir Security</div>
+        <div className="text-2xl font-bold">Fen AQS</div>
 
         <div>
           <h1 className="text-5xl font-bold leading-tight mb-8">
