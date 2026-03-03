@@ -4,7 +4,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, BarChart3, ClipboardList, Clock, Bell, Settings, HelpCircle } from 'lucide-react';
+import router from 'next/router';
 
+const HandelHome = () => {
+    router.push('/dashboard');
+  };
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
   const pathname = usePathname();
@@ -46,8 +50,8 @@ export function Sidebar() {
         } md:translate-x-0 md:relative flex flex-col`}
       >
        
-        <div className="p-6 border-b border-sidebar-border flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-sidebar-primary flex items-center justify-center text-sidebar-primary-foreground font-bold text-sm">
+        <div className="p-6 border-b onClick={HandelHome} hover:cursor-pointer border-sidebar-border flex items-center gap-1">
+          <div  className="w-8  h-8 rounded-lg bg-sidebar-primary flex items-center justify-center text-sidebar-primary-foreground font-bold text-sm">
             Fin
           </div>
           <span className="text-lg font-bold text-sidebar-foreground">aqs</span>
