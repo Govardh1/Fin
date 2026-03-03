@@ -157,7 +157,7 @@ export default function DashboardPage() {
                   </button>
                   <button 
                     onClick={handleNewScan}
-                    className="px-3 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90  hover:cursor-grab transition-colors flex items-center gap-2 text-sm font-semibold"
+                    className="px-3 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90  hover:cursor-pointer transition-colors flex items-center gap-2 text-sm font-semibold"
                   >
                     <Plus size={16} />
                     New scan
